@@ -1,6 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
+//require_once '../api.php'; < TO LOCAL TEST
+define("TOKEN","123456789");
 /**
  *
  *  @author sineverba
@@ -17,9 +19,21 @@ class BitlyTest extends TestCase
      */
     public function testIsThereAnySyntaxError()
     {
-        $var = new sineverba\Bitly\Bitly;
-        $this->assertTrue(is_object($var));
-        unset($var);
+        $bitly = new sineverba\Bitly\Bitly(TOKEN);
+        $this->assertTrue(is_object($bitly));
+        unset($bitly);
+    }
+
+
+    /**
+     * Test if Bitly return a short link
+     */
+    public function testIfReturnsAShortLink()
+    {
+        $bitly = new sineverba\Bitly\Bitly(TOKEN);
+        $bitly->createShortLink("http://www.google.it");
+        $this->assertNotNull($bitly->getShortUrl());
+        unset($bitly);
     }
 
 }

@@ -10,5 +10,5 @@ Under development!
 ```$xslt
 <?php
 
-define(TOKEN,"your_supersecret_token");
+define("TOKEN","your_supersecret_token");
 ```
