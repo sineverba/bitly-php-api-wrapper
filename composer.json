@@ -1,0 +1,23 @@
+{
+    "name": "sineverba/bitly",
+    "description": "PHP Wrapper for APIv4 Bit.ly",
+    "keywords": ["php","wrapper","bit.ly","bitly"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sineverba"
+        }
+    ],
+    "require": {
+		"php": ">=7.1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "sineverba\\Bitly\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7"
+    }
+}
