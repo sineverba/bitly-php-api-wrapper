@@ -1,6 +1,6 @@
 {
     "name": "sineverba/bitly",
-    "description": "PHP Wrapper for API V4 Bit.ly",
+    "description": "PHP Wrapper for APIv4 Bit.ly",
     "keywords": ["php","wrapper","bit.ly","bitly"],
     "license": "MIT",
     "authors": [
