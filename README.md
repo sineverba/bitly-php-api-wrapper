@@ -6,7 +6,9 @@ The Bit.ly name is trademark of Bit.ly!
 ## Setup
 Better use with `composer`.
 
-TODO: setup with composer
+```
+composer require sineverba/bitly
+```
 
 
 ## Usage
@@ -29,8 +31,9 @@ $short_url = $bitly->getShortUrl();
 - Create new file called "api.php"
 - Paste inside
 
-```$xslt
+```
 <?php
 
 define("TOKEN","your_supersecret_token");
 ```
+- Run `test.php`
