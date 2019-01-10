@@ -17,8 +17,6 @@ composer require sineverba/bitly
 ```
 <?php
 
-use ...
-
 $token = "your_supersecret_token";
 $bitly = new \sineverba\Bitly\Bitly($token);
 $bitly->createShortLink("https://www.example.com");
