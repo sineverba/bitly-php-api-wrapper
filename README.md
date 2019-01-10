@@ -20,10 +20,9 @@ composer require sineverba/bitly
 use ...
 
 $token = "your_supersecret_token";
-$bitly = new ....\Bitly($token);
-$bitly->createShortLink("https://www.google.com");
-
-$short_url = $bitly->getShortUrl();
+$bitly = new \sineverba\Bitly\Bitly($token);
+$bitly->createShortLink("https://www.example.com");
+$url = $bitly->getShortUrl();
 
 ```
 
