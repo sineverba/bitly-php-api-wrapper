@@ -6,4 +6,4 @@
 namespace sineverba\Bitly\Exceptions;
 
 
-class SineverbaException extends \Exception {}
+class BitlyException extends \Exception {}
