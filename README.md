@@ -9,5 +9,6 @@ composer require sineverba/bitly
 ```
 ## Usage
 TODO
+
 ## Contributing
-TODO CONTRIBUTING.md
+All contributions are welcome! See CONTRIBUTING.md

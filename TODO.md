@@ -1,6 +1,5 @@
 # Todo
-+ Add PHPUnit
-+ Add PSR2 check
-+ Add Travis
-+ Add Scrutinizer
++ Add PSR2 check >> see also contributing.md
++ Add shortcuts to phpunit (see also for contributing.md)
 + Add Codecov
++ Add Scrutinizer
