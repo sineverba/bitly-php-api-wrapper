@@ -1,0 +1,24 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+
+branches:
+  only:
+    - master
+    - develop
+
+before_script:
+  - composer self-update
+  - composer install --no-interaction
+
+script:
+  - vendor/bin/phpunit --testdox
+
+after_script:
+  #- bash <(curl -s https://codecov.io/bash)
+
+cache:
+  directories:
+    - vendor
