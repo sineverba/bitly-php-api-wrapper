@@ -6,7 +6,7 @@
 namespace sineverba\Bitly;
 
 
-use sineverba\Bitly\Exceptions\SineverbaException;
+use sineverba\Bitly\Exceptions\BitlyException;
 
 class Bitly
 {
@@ -37,12 +37,13 @@ class Bitly
      * https://bitly.com/a/oauth_apps
      *
      * @param $token
+     * @throws BitlyException
      */
 
     public function __construct($token=null)
     {
        if ($token===null) {
-           throw new SineverbaException("Token cannot be empty");
+           throw new BitlyException("Token cannot be empty");
        }
 
        $this->setToken($token);
@@ -52,14 +53,15 @@ class Bitly
      * Get shorten link.
      * @param $url original URL
      *
+     * @throws BitlyException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @author @sineverba
      * @since 1.0.0
-     *
      */
     public function createShortLink($url=null)
     {
         if ($url===null) {
-            throw new SineverbaException("URL cannot be empty");
+            throw new BitlyException("URL cannot be empty");
         }
 
         $option = array();
@@ -89,13 +91,12 @@ class Bitly
                 $short_url = $response->link;
                 $this->setShortUrl($short_url);
             } else {
-                throw new SineverbaException("No short link found. Probably missing/wrong token");
+                throw new BitlyException("No short link found. Probably missing/wrong token");
             }
 
         } catch (\GuzzleHttp\Exception\ClientException $e) {
 
-            //echo $e->getMessage();
-            throw new SineverbaException("No short link found. Probably missing/wrong token");
+            throw new BitlyException("No short link found. Probably missing/wrong token");
 
         }
     }
