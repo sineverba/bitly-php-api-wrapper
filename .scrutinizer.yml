@@ -1,0 +1,22 @@
+filter:
+  paths:
+    - "src/"
+build:
+  environment:
+    php: '7.2'
+  cache:
+    directories:
+      - vendor/
+      - ~/.composer/cache/
+  dependencies:
+    before:
+      - composer self-update
+      - composer install --no-interaction
+  tests:
+    override:
+      - vendor/bin/php-cs-fixer fix src --dry-run --rules=@PSR2
+      -
+        command: vendor/bin/phpunit --testdox --coverage-clover=clover-coverage
+        coverage:
+          file: clover-coverage
+          format: clover

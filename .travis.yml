@@ -14,10 +14,11 @@ before_script:
   - composer install --no-interaction
 
 script:
+  - vendor/bin/php-cs-fixer fix src --dry-run --rules=@PSR2
   - vendor/bin/phpunit --testdox
 
 after_script:
-  #- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 
 cache:
   directories:
