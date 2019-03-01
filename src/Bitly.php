@@ -5,14 +5,13 @@
 
 namespace sineverba\Bitly;
 
-
 use sineverba\Bitly\Exceptions\BitlyException;
 
 class Bitly
 {
 
     /**
-     * @var the token
+     * @var $token the token
      */
     private $token;
 
@@ -42,11 +41,11 @@ class Bitly
 
     public function __construct($token=null)
     {
-       if ($token===null) {
-           throw new BitlyException("Token cannot be empty");
-       }
+        if ($token===null) {
+            throw new BitlyException("Token cannot be empty");
+        }
 
-       $this->setToken($token);
+        $this->setToken($token);
     }
 
     /**
@@ -79,7 +78,6 @@ class Bitly
         $post['long_url'] = $url;
 
         try {
-
             $response = $client->request('POST', 'shorten', [
                 'headers'    =>  $headers,
                 'json'      => $post
@@ -93,11 +91,8 @@ class Bitly
             } else {
                 throw new BitlyException("No short link found. Probably missing/wrong token");
             }
-
         } catch (\GuzzleHttp\Exception\ClientException $e) {
-
             throw new BitlyException("No short link found. Probably missing/wrong token");
-
         }
     }
 
@@ -144,5 +139,4 @@ class Bitly
     {
         $this->short_url = $short_url;
     }
-
 }

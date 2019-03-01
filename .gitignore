@@ -5,3 +5,4 @@
 /logs
 .env
 test.php
+.php_cs.cache
