@@ -5,6 +5,7 @@
 
 namespace sineverba\Bitly;
 
+use GuzzleHttp\Client;
 use sineverba\Bitly\Exceptions\BitlyException;
 
 class Bitly
@@ -63,10 +64,27 @@ class Bitly
             throw new BitlyException("URL cannot be empty");
         }
 
+        $response = $this->callBitly($url);
+        if (is_object($response) && isset($response->link)) {
+            $short_url = $response->link;
+            $this->setShortUrl($short_url);
+        } else {
+            throw new BitlyException("No short link found. Probably missing/wrong token");
+        }
+    }
+
+    /**
+     * @param $url
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws BitlyException
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function callBitly($url)
+    {
         $option = array();
         $option['base_uri'] = $this->getApiUrl();
         $option['verify'] = false;
-        $client = new \GuzzleHttp\Client($option);
+        $client = new Client($option);
 
         $headers = [
             'Authorization' => 'Bearer ' . $this->getToken(),
@@ -83,14 +101,8 @@ class Bitly
                 'json'      => $post
             ]);
 
-            $response = json_decode($response->getBody());
-
-            if (is_object($response) && isset($response->link)) {
-                $short_url = $response->link;
-                $this->setShortUrl($short_url);
-            } else {
-                throw new BitlyException("No short link found. Probably missing/wrong token");
-            }
+            $response = \GuzzleHttp\json_decode($response->getBody());
+            return $response;
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             throw new BitlyException("No short link found. Probably missing/wrong token");
         }
