@@ -10,10 +10,4 @@ namespace Bitlywrap\Interfaces;
 
 interface AdapterInterface
 {
-    /**
-     * Prepare the headers for successive implementations
-     *
-     * @return array
-     */
-    public function getHeaders(): array;
 }

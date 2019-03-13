@@ -28,10 +28,34 @@ class Auth implements AuthInterface
     }
 
     /**
+     * Prepare the headers for successive implementations
+     *
+     * @return array
+     */
+    public function getHeaders(): array
+    {
+        $headers = [
+            'Authorization: Bearer '.$this->getToken(),
+            'Accept'        => 'application/json',
+            'Content-Type'  => 'application/json'
+        ];
+        return $headers;
+    }
+
+    /**
      * @param $token
      */
     private function setToken($token)
     {
         $this->token = $token;
+    }
+
+
+    /**
+     * @return string
+     */
+    private function getToken()
+    {
+        return $this->token;
     }
 }

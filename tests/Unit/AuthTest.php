@@ -24,4 +24,16 @@ class AuthTest extends TestCase
         $this->assertInstanceOf('\Bitlywrap\Auth\Auth',$auth);
         $this->assertObjectHasAttribute('token',$auth);
     }
+
+    /**
+     * Test that adapter returns header
+     */
+    public function test_auth_returns_headers()
+    {
+        $token = 'd7WPz7KJ3k';
+        $auth = new Auth($token);
+        $headers = $auth->getHeaders();
+        $this->assertTrue(is_array($headers));
+        $this->assertTrue($headers[0] === 'Authorization: Bearer d7WPz7KJ3k');
+    }
 }
