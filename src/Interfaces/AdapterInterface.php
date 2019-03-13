@@ -8,6 +8,15 @@
 
 namespace Bitlywrap\Interfaces;
 
+use Bitlywrap\Auth\Auth;
+
 interface AdapterInterface
 {
+    /**
+     * AdapterInterface constructor.
+     * @param Auth $auth
+     * @param string|null $base_uri
+     * @param object|null $client
+     */
+    public function __construct(Auth $auth, $base_uri = null, $client = null);
 }

@@ -15,12 +15,20 @@ $ composer require sineverba/bitly-php-api-wrapper
 
 ## Usage
 
++ Get your **Generic Access Token** from [Bit.ly](https://bitly.com/)
+
 ```php
 <?php
 
 require_once ('vendor/autoload.php');
 
-// TODO
+use Bitlywrap\Auth\Auth;
+use Bitlywrap\Adapter\Adapter;
+
+$token = 'your_generic_access_token';
+
+$auth = new Auth($token);
+$adapter = new Adapter($auth);
 
 ```
 
