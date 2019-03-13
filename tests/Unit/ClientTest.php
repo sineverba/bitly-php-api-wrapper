@@ -19,7 +19,7 @@ class ClientTest extends TestCase
      */
     public function test_can_instantiate_client_class()
     {
-        $client = new Client();
+        $client = new Client('token');
         $this->assertTrue(is_object($client));
         $this->assertInstanceOf('\bitlywrap\Client',$client);
     }

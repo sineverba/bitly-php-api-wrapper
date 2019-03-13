@@ -10,7 +10,14 @@ namespace Bitlywrap;
 
 class Client
 {
-    public function __construct()
+    /**
+     * @var string
+     */
+    private $adapter;
+
+    public function __construct(string $token, $adapter = null)
     {
+        if ($adapter === null) {
+        }
     }
 }
