@@ -8,7 +8,6 @@
 
 namespace Bitlywrap\Auth;
 
-
 use Bitlywrap\Interfaces\AuthInterface;
 
 class Auth implements AuthInterface
