@@ -1,35 +1,7 @@
-#This project
-#Add here
-#Certificates
-.key
-.pem
-#PHPStorm
-.idea
-#Aptana
-.project
-#Composer
-vendor
-#NPM
-node_modules
-#ApiKey
-apikey.js
-Apikey.js
-apiKey.js
-ApiKey.js
-api_key.js
-api_Key.js
-Api_Key.js
-Api_key.js
-#Test with api
-api.php
-#misc
-.git
-Thumbs.db
-.DS_Store
+/vendor
+/logs
 .env
-tmp
-.well-known
-.well-known/
-*.zip
-#F3
-config.cfg
+.phpunit.result.cache
+.php_cs.cache
+.idea
+test.php
