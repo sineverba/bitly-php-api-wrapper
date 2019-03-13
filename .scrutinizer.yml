@@ -11,7 +11,6 @@ build:
   dependencies:
     before:
       - composer self-update
-      #- composer install --no-interaction
   tests:
     override:
       - php-scrutinizer-run

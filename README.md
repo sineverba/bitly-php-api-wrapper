@@ -1,36 +1,29 @@
-PHP Wrapper for Bit.ly API V4
-=========================
+# Bit.ly PHP api wrapper
+## V. 2.0.0 - Last update: 13/03/2019
 
 The Bit.ly name is trademark of Bit.ly!
 
-## Setup
-Better use with `composer`.
+Simple PHP wrapper for the [Bit.ly](https://bitly.com/) API.
 
-```
-composer require sineverba/bitly
-```
+V1 is not anymore mantained. V2 under development.
 
+## Install
+
+```bash
+$ composer require sineverba/bitly-php-api-wrapper
+```
 
 ## Usage
-- Get your own token inside web app
 
-```
+```php
 <?php
 
-$token = "your_supersecret_token";
-$bitly = new \sineverba\Bitly\Bitly($token);
-$bitly->createShortLink("https://www.example.com");
-$url = $bitly->getShortUrl();
+require_once ('vendor/autoload.php');
+
+// TODO
 
 ```
 
-## Test
-- Create new file called "api.php"
-- Paste inside
+## Contributions
 
-```
-<?php
-
-define("TOKEN","your_supersecret_token");
-```
-- Run `test.php`
+Contributions are **welcome** and will be fully **credited**.
