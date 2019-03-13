@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "sineverba\\Bitly\\": "src/"
+            "Bitlywrap\\": "src/"
         }
     },
     "require-dev": {
