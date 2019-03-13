@@ -28,8 +28,8 @@ class Adapter implements AdapterInterface
     /**
      * Adapter constructor.
      * @param Auth $auth
-     * @param null $uri
-     * @param null $client
+     * @param string|null $base_uri
+     * @param object|null $client
      */
     public function __construct(Auth $auth, $base_uri = null, $client = null)
     {

@@ -16,7 +16,7 @@ interface AdapterInterface
      * AdapterInterface constructor.
      * @param Auth $auth
      * @param string|null $base_uri
-     * @param null $client
+     * @param object|null $client
      */
     public function __construct(Auth $auth, $base_uri = null, $client = null);
 }
