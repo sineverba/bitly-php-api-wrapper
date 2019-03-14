@@ -1,0 +1,21 @@
+{
+  "args": {},
+  "data": "{\"post_key\": \"post_value\"}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Cache-Control": "no-cache",
+    "Content-Length": "26",
+    "Content-Type": "application/json",
+    "Host": "httpbin.org",
+    "Postman-Token": "e3-e96",
+    "User-Agent": "PostmanRuntime/7.6.1"
+  },
+  "json": {
+    "post_key": "post_value"
+  },
+  "origin": "1.2.3.4, 1.2.3.4",
+  "url": "https://httpbin.org/post"
+}

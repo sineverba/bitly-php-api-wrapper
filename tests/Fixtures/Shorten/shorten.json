@@ -1,0 +1,13 @@
+{
+  "created_at": "1970-01-01T00:00:00+0000",
+  "id": "bit.ly/2HiZRpm",
+  "link": "http://bit.ly/2HiZRpm",
+  "custom_bitlinks": [],
+  "long_url": "http://www.example.com/",
+  "archived": false,
+  "tags": [],
+  "deeplinks": [],
+  "references": {
+    "group": "https://api-ssl.bitly.com/v4/groups/ggrroouuppss"
+  }
+}

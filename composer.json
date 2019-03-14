@@ -1,23 +1,31 @@
 {
-    "name": "sineverba/bitly",
+    "name": "sineverba/bitly-php-api-wrapper",
     "description": "PHP Wrapper for APIv4 Bit.ly",
-    "keywords": ["php","wrapper","bit.ly","bitly"],
+    "keywords": ["php","wrapper","bit.ly","bitly","api"],
     "license": "MIT",
     "authors": [
         {
-            "name": "sineverba"
+            "name": "sineverba",
+            "email": "2634842+sineverba@users.noreply.github.com"
         }
     ],
     "require": {
-		"php": ">=7.1",
+        "php": ">=7.1",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^6.3"
     },
     "autoload": {
         "psr-4": {
-            "sineverba\\Bitly\\": "src/"
+            "Bitlywrap\\": "src/"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "7"
+        "phpunit/phpunit": "7",
+        "friendsofphp/php-cs-fixer": "^2.14"
+    },
+    "scripts": {
+        "test": "phpunit --testdox",
+        "check-style": "php-cs-fixer fix src --dry-run --rules=@PSR2",
+        "fix-style": "php-cs-fixer fix src --rules=@PSR2"
     }
 }
