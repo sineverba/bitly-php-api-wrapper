@@ -140,7 +140,7 @@ class AdapterTest extends TestCase
     public function test_empty_base_uri_returns_bitly_link()
     {
         $adapter = new Adapter($this->auth);
-        $bitly_link = 'https://api-ssl.bitly.com/v4';
+        $bitly_link = 'https://api-ssl.bitly.com/v4/';
         $this->assertEquals($bitly_link,$adapter->getBaseUri());
     }
 
