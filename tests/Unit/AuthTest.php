@@ -34,6 +34,6 @@ class AuthTest extends TestCase
         $auth = new Auth($token);
         $headers = $auth->getHeaders();
         $this->assertTrue(is_array($headers));
-        $this->assertTrue($headers[0] === 'Authorization: Bearer d7WPz7KJ3k');
+        $this->assertTrue($headers['Authorization'] === 'Bearer d7WPz7KJ3k');
     }
 }

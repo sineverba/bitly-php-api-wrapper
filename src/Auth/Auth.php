@@ -35,7 +35,7 @@ class Auth implements AuthInterface
     public function getHeaders(): array
     {
         $headers = [
-            'Authorization: Bearer '.$this->getToken(),
+            'Authorization' => 'Bearer '.$this->getToken(),
             'Accept'        => 'application/json',
             'Content-Type'  => 'application/json'
         ];

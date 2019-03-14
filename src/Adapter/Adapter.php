@@ -34,7 +34,7 @@ class Adapter implements AdapterInterface
     public function __construct(Auth $auth, $base_uri = null, $client = null)
     {
         if ($base_uri === null) {
-            $base_uri = 'https://api-ssl.bitly.com/v4';
+            $base_uri = 'https://api-ssl.bitly.com/v4/';
         }
         $this->setBaseUri($base_uri);
 
@@ -42,7 +42,8 @@ class Adapter implements AdapterInterface
         if ($client === null) {
             $client = new Client([
                 'base_uri' => $this->getBaseUri(),
-                'headers' => $headers
+                'headers' => $headers,
+                'verify' => false
             ]);
         }
         $this->setClient($client);
