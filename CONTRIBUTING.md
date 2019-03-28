@@ -34,6 +34,8 @@ $ composer check-style
 $ composer fix-style
 ```
 
+If you use PhpStorm, you can check code coverage at [http://localhost:63342/bitly-php-api-wrapper/logs/clover/index.html](http://localhost:63342/bitly-php-api-wrapper/logs/clover/index.html)
+
 ## Exceptions
 
 - All exceptions thrown by code in this package MUST implement appropriate custom exceptions.
