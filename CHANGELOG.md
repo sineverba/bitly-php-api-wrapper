@@ -3,6 +3,7 @@
 + Add Packagist badge
 + Fix CircleCI
 + Fix #27
++ Fix #35
 
 ## 2.1.0
 + Add several CIs integrations
