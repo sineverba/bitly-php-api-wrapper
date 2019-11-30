@@ -1,4 +1,4 @@
-# Next version
+# 2.2.0
 + Update dependencies
 + Add Packagist badge
 + Fix CircleCI
