@@ -40,7 +40,7 @@ jobs:
             - ./vendor
       - restore_cache:
           keys:
-            - node-v1-{{ checksum "package.json" }}
+            #- node-v1-{{ checksum "package.json" }}
             - node-v1-
       # run tests with phpunit or codecept
       - run: ./vendor/bin/phpunit
