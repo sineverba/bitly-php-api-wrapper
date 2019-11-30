@@ -1,4 +1,10 @@
-# 2.1.0
+# Next version
++ Update dependencies
++ Add Packagist badge
++ Fix CircleCI
++ Fix #27
+
+## 2.1.0
 + Add several CIs integrations
 + Fix #19 #20 #23
 
