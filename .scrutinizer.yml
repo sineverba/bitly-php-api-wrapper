@@ -3,7 +3,7 @@ filter:
     - "src/"
 build:
   environment:
-    php: '7.1'
+    php: '7.3'
   cache:
     directories:
       - vendor/
