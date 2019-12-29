@@ -1,4 +1,19 @@
-# 2.2.0
+# 3.0.0
+
+### Fix
++ Fix #46
+
+### Bump dependencies
++ Bump php 7.2
+
+## 2.3.1
++ Hotfix composer
+
+## 2.3.0
++ Bump dependencies
++ PHP require 7.1
+
+## 2.2.0
 + Update dependencies
 + Add Packagist badge
 + Fix CircleCI

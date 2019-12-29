@@ -25,7 +25,7 @@ class WrapperTest extends TestCase
     private $auth;
     private $adapter;
 
-    public function setUp()
+    public function setUp() :void
     {
         $token = 'd7WPz7KJ3k';
         $auth = new Auth($token);
