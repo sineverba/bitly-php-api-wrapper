@@ -1,4 +1,8 @@
-# Next version
+# 3.0.0
+
+### Fix
++ Fix #46
+
 ### Bump dependencies
 + Bump php 7.2
 
