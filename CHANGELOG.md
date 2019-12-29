@@ -1,4 +1,8 @@
-# 2.2.0
+# 2.3.0
++ Bump dependencies
++ PHP require 7.1
+
+## 2.2.0
 + Update dependencies
 + Add Packagist badge
 + Fix CircleCI
