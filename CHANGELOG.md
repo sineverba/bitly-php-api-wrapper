@@ -1,4 +1,14 @@
-# 3.0.0
+# 3.1.0
+
+### Change
++ Update CHANGELOG.md
+
+### Bump depedencies
+``` bash
+ - Updating phpunit/phpunit (8.5.1 => 8.5.2): Loading from cache
+```
+
+## 3.0.0
 
 ### Fix
 + Fix #46
