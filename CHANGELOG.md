@@ -1,4 +1,7 @@
-# Next version
+# 3.1.0
+
+### Change
++ Update CHANGELOG.md
 
 ### Bump depedencies
 ``` bash
