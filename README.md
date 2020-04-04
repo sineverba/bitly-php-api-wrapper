@@ -7,16 +7,17 @@ Simple PHP wrapper for the [Bit.ly](https://bitly.com/) API V4.
 
 [![Total Downloads](https://poser.pugx.org/sineverba/bitly-php-api-wrapper/downloads)](https://packagist.org/packages/sineverba/bitly-php-api-wrapper)
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/build-status/master) [![Build Status](https://travis-ci.org/sineverba/bitly-php-api-wrapper.svg?branch=master)](https://travis-ci.org/sineverba/bitly-php-api-wrapper) [![codecov](https://codecov.io/gh/sineverba/bitly-php-api-wrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/sineverba/bitly-php-api-wrapper) [![StyleCI](https://github.styleci.io/repos/164450893/shield?branch=master)](https://github.styleci.io/repos/164450893) [![Coverage Status](https://coveralls.io/repos/github/sineverba/bitly-php-api-wrapper/badge.svg?branch=master)](https://coveralls.io/github/sineverba/bitly-php-api-wrapper?branch=master) [![CircleCI](https://circleci.com/gh/sineverba/bitly-php-api-wrapper/tree/master.svg?style=svg)](https://circleci.com/gh/sineverba/bitly-php-api-wrapper/tree/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/build-status/master) [![Build Status](https://travis-ci.com/sineverba/bitly-php-api-wrapper.svg?branch=master)](https://travis-ci.com/sineverba/bitly-php-api-wrapper) [![codecov](https://codecov.io/gh/sineverba/bitly-php-api-wrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/sineverba/bitly-php-api-wrapper) [![StyleCI](https://github.styleci.io/repos/164450893/shield?branch=master)](https://github.styleci.io/repos/164450893) [![Coverage Status](https://coveralls.io/repos/github/sineverba/bitly-php-api-wrapper/badge.svg?branch=master)](https://coveralls.io/github/sineverba/bitly-php-api-wrapper?branch=master) [![CircleCI](https://circleci.com/gh/sineverba/bitly-php-api-wrapper/tree/master.svg?style=svg)](https://circleci.com/gh/sineverba/bitly-php-api-wrapper/tree/master)
 
 ## Install
 
 ### Php compatibility list
 
-| Version |  PHP            | Branch |
-|---------|-----------------| ------ |
-| 3.x.y     |  7.2 or greater | `develop or master` |
-| 2.x.y     | <= 7.1          | `release-2` |
+| Version   |  PHP            | Branch              |
+|-----------|-----------------| ------------------- |
+| 4.x.y     |  7.3 or greater | `develop or master` |
+| 3.x.y     |  7.2            | `release-3`         |
+| 2.x.y     | <= 7.1          | `release-2`         |
 
 ```php 
 $ composer require sineverba/bitly-php-api-wrapper
