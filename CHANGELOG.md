@@ -1,4 +1,41 @@
-# 3.1.0
+# 4.0.0
+# Support only Php 7.3+
+
+### Update
++ Update `scrutinizer` to php 7.4
++ Update `travis`
+
+### Bump dependencies
+``` bash
+  - Updating sebastian/version (2.0.1 => 3.0.0): Loading from cache
+  - Updating sebastian/type (1.1.3 => 2.0.0): Loading from cache
+  - Updating sebastian/resource-operations (2.0.1 => 3.0.0): Loading from cache
+  - Updating sebastian/recursion-context (3.0.0 => 4.0.0): Loading from cache
+  - Updating sebastian/object-reflector (1.1.1 => 2.0.0): Loading from cache
+  - Updating sebastian/object-enumerator (3.0.3 => 4.0.0): Loading from cache
+  - Updating sebastian/global-state (3.0.0 => 4.0.0): Loading from cache
+  - Updating sebastian/exporter (3.1.2 => 4.0.0): Loading from cache
+  - Updating sebastian/environment (4.2.3 => 5.0.2): Loading from cache
+  - Updating sebastian/diff (3.0.2 => 4.0.0): Loading from cache
+  - Updating sebastian/comparator (3.0.2 => 4.0.0): Loading from cache
+  - Installing sebastian/code-unit (1.0.0): Loading from cache
+  - Updating phpunit/php-timer (2.1.2 => 3.0.0): Loading from cache
+  - Updating phpunit/php-text-template (1.2.1 => 2.0.0): Loading from cache
+  - Installing phpunit/php-invoker (3.0.0): Loading from cache
+  - Updating phpunit/php-file-iterator (2.0.2 => 3.0.0): Loading from cache
+  - Updating sebastian/code-unit-reverse-lookup (1.0.1 => 2.0.0): Loading from cache
+  - Updating phpunit/php-token-stream (3.1.1 => 4.0.0): Loading from cache
+  - Updating phpunit/php-code-coverage (7.0.10 => 8.0.1): Loading from cache
+  - Updating phpunit/phpunit (8.5.3 => 9.1.1): Loading from cache
+
+```
+
+
+## 3.2.0
+
+# Last version supporting php 7.2
+
+## 3.1.0
 
 ### Change
 + Update CHANGELOG.md
