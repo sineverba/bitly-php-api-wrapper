@@ -1,4 +1,4 @@
-# Next version
+# 5.0.0
 + Supports PHP from 7.0
 + Add Docker for development
 
