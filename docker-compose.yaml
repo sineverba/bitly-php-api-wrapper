@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  develop:
+    build:
+      args:
+        user: sineverba
+        #user: ${CURRENT_USER}
+        uid: 1000
+        #uid: ${CURRENT_UID}
+      context: ./
+    container_name: bpaw-develop
+    image: bpaw-develop:0.1.0
+    volumes:
+      #- ./:/home/${CURRENT_USER}/app
+      - ./:/home/sineverba/app
+    networks:
+      - develop-bpaw
+
+networks:
+  develop-bpaw:
+    driver: bridge
