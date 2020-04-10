@@ -23,7 +23,7 @@ class AdapterTest extends TestCase
     private $token;
     private $auth;
 
-    public function setUp() :void
+    public function setUp()
     {
         $token = 'd7WPz7KJ3k';
         $auth = new Auth($token);

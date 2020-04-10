@@ -1,9 +1,19 @@
+os: linux
+
+dist: xenial
+
 language: php
 
-php:
-  - 7.3
-  - 7.4
-  - 7.4snapshot
+matrix:
+  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
+  fast_finish: true
+  include:
+    - php: 7.0
+    - php: 7.1
+    - php: 7.2
+    - php: 7.3
+    - php: 7.4
+      dist: bionic
 
 branches:
   only:
