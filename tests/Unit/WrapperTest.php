@@ -25,7 +25,7 @@ class WrapperTest extends TestCase
     private $auth;
     private $adapter;
 
-    public function setUp()
+    private function initialize()
     {
         $token = 'd7WPz7KJ3k';
         $auth = new Auth($token);
@@ -43,6 +43,8 @@ class WrapperTest extends TestCase
      */
     public function test_get_short_link_method_return_string()
     {
+        $this->initialize();
+
         $fixture = dirname(__DIR__,1).'/Fixtures/Shorten/shorten.json';
         $this->assertFileExists($fixture);
 
@@ -73,6 +75,8 @@ class WrapperTest extends TestCase
      */
     public function test_can_instantiate_wrapper()
     {
+        $this->initialize();
+
         $wrapper = new Wrapper($this->adapter);
         $this->assertInstanceOf('\Bitlywrap\Wrapper\Wrapper',$wrapper);
     }

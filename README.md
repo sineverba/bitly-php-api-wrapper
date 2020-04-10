@@ -11,11 +11,14 @@ Simple PHP wrapper for the [Bit.ly](https://bitly.com/) API V4.
 
 ## Docker development
 
-I use a Docker image to develop (see `docker-compose.yaml`)
+I use a Docker image (PHP 7.0 e PHP 7.4) to develop (see `docker-compose.yaml`)
 
 ``` bash
-$ docker-compose build develop
-$ docker-compose run --rm develop
+$ docker-compose build develop70
+$ docker-compose run --rm develop70
+
+$ docker-compose build develop74
+$ docker-compose run --rm develop74
 ```
 
 To run with your own user/id, uncomment relative sections on `docker-compose.yaml` and run it with these commands
