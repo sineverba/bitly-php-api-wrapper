@@ -2,5 +2,5 @@ version: 1
 update_configs:
   - package_manager: "php:composer"
     directory: "/"
-    update_schedule: "weekly"
+    update_schedule: "monthly"
     target_branch: "develop"

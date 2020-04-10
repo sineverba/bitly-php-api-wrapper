@@ -1,9 +1,19 @@
+os: linux
+
+dist: xenial
+
 language: php
 
-php:
-  - 7.1
-  - 7.2
-  - 7.3
+matrix:
+  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
+  fast_finish: true
+  include:
+    - php: 7.0
+    - php: 7.1
+    - php: 7.2
+    - php: 7.3
+    - php: 7.4
+      dist: bionic
 
 branches:
   only:
@@ -11,6 +21,7 @@ branches:
     - develop
 
 before_script:
+  - rm composer.lock
   - composer self-update
   - composer install --no-interaction
 
