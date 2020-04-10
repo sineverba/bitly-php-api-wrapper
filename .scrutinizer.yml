@@ -10,7 +10,6 @@ build:
       - ~/.composer/cache/
   dependencies:
     before:
-      - rm composer.lock
       - composer self-update
   tests:
     override:
