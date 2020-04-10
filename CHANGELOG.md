@@ -1,4 +1,8 @@
-# 5.0.1
+# 5.0.2
++ Fix Travis
++ Fix support for PHP > 7.1
+
+## 5.0.1
 + Fix CIs errors
 
 ## 5.0.0
