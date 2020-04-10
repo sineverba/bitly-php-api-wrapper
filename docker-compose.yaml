@@ -1,13 +1,29 @@
 version: "3.7"
 services:
-  develop:
+  develop70:
     build:
       args:
         user: sineverba
         #user: ${CURRENT_USER}
         uid: 1000
         #uid: ${CURRENT_UID}
-      context: ./
+      context: ./docker-compose/php70
+    container_name: bpaw-develop
+    image: bpaw-develop:0.1.0
+    volumes:
+      #- ./:/home/${CURRENT_USER}/app
+      - ./:/home/sineverba/app
+    networks:
+      - develop-bpaw
+
+  develop74:
+    build:
+      args:
+        user: sineverba
+        #user: ${CURRENT_USER}
+        uid: 1000
+        #uid: ${CURRENT_UID}
+      context: ./docker-compose/php74
     container_name: bpaw-develop
     image: bpaw-develop:0.1.0
     volumes:

@@ -23,7 +23,7 @@ class AdapterTest extends TestCase
     private $token;
     private $auth;
 
-    public function setUp()
+    private function initialize()
     {
         $token = 'd7WPz7KJ3k';
         $auth = new Auth($token);
@@ -39,6 +39,8 @@ class AdapterTest extends TestCase
      */
     public function test_post_return_response_interface()
     {
+        $this->initialize();
+
         $fixture = dirname(__DIR__,1).'/Fixtures/httpbin/post.json';
         $this->assertFileExists($fixture);
 
@@ -77,6 +79,8 @@ class AdapterTest extends TestCase
      */
     public function test_request_method_post_return_response_interface()
     {
+        $this->initialize();
+
         $fixture = dirname(__DIR__,1).'/Fixtures/httpbin/post.json';
         $this->assertFileExists($fixture);
 
@@ -115,6 +119,8 @@ class AdapterTest extends TestCase
      */
     public function test_invalid_method_thrown_invalidargumentexception()
     {
+        $this->initialize();
+
         $this->expectException(\InvalidArgumentException::class);
         $adapter = new Adapter($this->auth);
         $adapter->request('invalid','shorten');
@@ -127,6 +133,8 @@ class AdapterTest extends TestCase
      */
     public function test_custom_base_uri_returns_custom_link()
     {
+        $this->initialize();
+
         $custom_link = 'http://www.example.com';
         $adapter = new Adapter($this->auth, $custom_link);
         $this->assertEquals($custom_link,$adapter->getBaseUri());
@@ -139,6 +147,8 @@ class AdapterTest extends TestCase
      */
     public function test_empty_base_uri_returns_bitly_link()
     {
+        $this->initialize();
+
         $adapter = new Adapter($this->auth);
         $bitly_link = 'https://api-ssl.bitly.com/v4/';
         $this->assertEquals($bitly_link,$adapter->getBaseUri());
@@ -151,6 +161,8 @@ class AdapterTest extends TestCase
      */
     public function test_can_instantiate_adapter()
     {
+        $this->initialize();
+
         $adapter = new Adapter($this->auth);
         $this->assertInstanceOf('\Bitlywrap\Adapter\Adapter',$adapter);
     }
