@@ -1,4 +1,7 @@
-# 5.0.0
+# 5.0.1
++ Fix CIs errors
+
+## 5.0.0
 + Supports PHP from 7.0
 + Add Docker for development
 
