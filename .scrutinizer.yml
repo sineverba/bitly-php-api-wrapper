@@ -3,13 +3,14 @@ filter:
     - "src/"
 build:
   environment:
-    php: '7.4'
+    php: '7.0'
   cache:
     directories:
       - vendor/
       - ~/.composer/cache/
   dependencies:
     before:
+      - rm composer.lock
       - composer self-update
   tests:
     override:

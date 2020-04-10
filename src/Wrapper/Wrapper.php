@@ -54,7 +54,7 @@ class Wrapper implements WrapperInterface
     /**
      * @param Adapter $adapter
      */
-    private function setAdapter(Adapter $adapter): void
+    private function setAdapter(Adapter $adapter)
     {
         $this->adapter = $adapter;
     }

@@ -9,15 +9,25 @@ Simple PHP wrapper for the [Bit.ly](https://bitly.com/) API V4.
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/build-status/master) [![Build Status](https://travis-ci.com/sineverba/bitly-php-api-wrapper.svg?branch=master)](https://travis-ci.com/sineverba/bitly-php-api-wrapper) [![codecov](https://codecov.io/gh/sineverba/bitly-php-api-wrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/sineverba/bitly-php-api-wrapper) [![StyleCI](https://github.styleci.io/repos/164450893/shield?branch=master)](https://github.styleci.io/repos/164450893) [![Coverage Status](https://coveralls.io/repos/github/sineverba/bitly-php-api-wrapper/badge.svg?branch=master)](https://coveralls.io/github/sineverba/bitly-php-api-wrapper?branch=master) [![CircleCI](https://circleci.com/gh/sineverba/bitly-php-api-wrapper/tree/master.svg?style=svg)](https://circleci.com/gh/sineverba/bitly-php-api-wrapper/tree/master)
 
+## Docker development
+
+I use a Docker image to develop (see `docker-compose.yaml`)
+
+``` bash
+$ docker-compose build develop
+$ docker-compose run --rm develop
+```
+
+To run with your own user/id, uncomment relative sections on `docker-compose.yaml` and run it with these commands
+
+``` bash
+
+$ CURRENT_USER=$(whoami) CURRENT_UID=$(id -u) docker-compose build develop56
+$ CURRENT_USER=$(whoami) CURRENT_UID=$(id -u) docker-compose run --rm develop56
+```
+
+
 ## Install
-
-### Php compatibility list
-
-| Version   |  PHP            | Branch              |
-|-----------|-----------------| ------------------- |
-| 4.x.y     |  7.3 or greater | `develop or master` |
-| 3.x.y     |  7.2            | `release-3`         |
-| 2.x.y     | <= 7.1          | `release-2`         |
 
 ```php 
 $ composer require sineverba/bitly-php-api-wrapper

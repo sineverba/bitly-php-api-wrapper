@@ -1,5 +1,10 @@
-# 4.0.0
-# Support only Php 7.3+
+# 5.0.0
++ Supports PHP from 7.0
++ Add Docker for development
+
+
+## 4.0.0
+## Support only Php 7.3+
 
 ### Update
 + Update `scrutinizer` to php 7.4
