@@ -21,7 +21,6 @@ branches:
     - develop
 
 before_script:
-  - [ -f composer.lock ] && rm composer.lock
   - composer self-update
   - composer install --no-interaction
 

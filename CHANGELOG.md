@@ -1,4 +1,7 @@
-# 5.0.1
+# 5.0.2
++ Fix Travis
+
+## 5.0.1
 + Fix CIs errors
 
 ## 5.0.0
