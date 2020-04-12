@@ -1,5 +1,6 @@
 # Next version
 + Small refactor on Docker usage
++ Compatible to PHP 5.6
 
 ## 5.0.2
 + Fix Travis

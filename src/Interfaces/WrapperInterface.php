@@ -23,5 +23,5 @@ interface WrapperInterface
      * @param string $long_url The url to shorten
      * @return mixed
      */
-    public function getShortLink(string $long_url);
+    public function getShortLink($long_url);
 }

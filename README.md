@@ -11,7 +11,7 @@ Simple PHP wrapper for the [Bit.ly](https://bitly.com/) API V4.
 
 ## Docker development
 
-I use two Docker images (PHP 7.0 and PHP 7.4) to develop (see `docker-compose.yaml`).
+I use Docker images (PHP 5.6, PHP 7.0 and PHP 7.4) to develop (see `docker-compose.yaml`).
 
 Change developXY with PHP version you want use.
 

@@ -22,7 +22,7 @@ class Auth implements AuthInterface
      *
      * @param string $token
      */
-    public function __construct(string $token)
+    public function __construct($token)
     {
         $this->setToken($token);
     }
@@ -32,7 +32,7 @@ class Auth implements AuthInterface
      *
      * @return array
      */
-    public function getHeaders(): array
+    public function getHeaders()
     {
         $headers = [
             'Authorization' => 'Bearer '.$this->getToken(),
