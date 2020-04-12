@@ -45,7 +45,7 @@ class WrapperTest extends TestCase
     {
         $this->initialize();
 
-        $fixture = dirname(__DIR__,1).'/Fixtures/Shorten/shorten.json';
+        $fixture = dirname(__DIR__).'/Fixtures/Shorten/shorten.json';
         $this->assertFileExists($fixture);
 
         $body = file_get_contents($fixture);

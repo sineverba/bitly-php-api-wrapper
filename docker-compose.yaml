@@ -1,5 +1,21 @@
 version: "3.7"
 services:
+  develop56:
+    build:
+      args:
+        user: sineverba
+        #user: ${CURRENT_USER}
+        uid: 1000
+        #uid: ${CURRENT_UID}
+      context: ./docker-compose/php56
+    container_name: bpaw-develop56
+    image: bpaw-develop56:1.0.0
+    volumes:
+      #- ./:/home/${CURRENT_USER}/app
+      - ./:/home/sineverba/app
+    networks:
+      - develop-bpaw
+
   develop70:
     build:
       args:

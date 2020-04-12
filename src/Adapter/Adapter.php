@@ -55,7 +55,7 @@ class Adapter implements AdapterInterface
      * @param array $headers
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function post(string $uri, array $data = [], array $headers = []): ResponseInterface
+    public function post($uri, $data = [], $headers = [])
     {
         $response = $this->request('post', $uri, $data, $headers);
         return $response;
@@ -68,7 +68,7 @@ class Adapter implements AdapterInterface
      * @param array $headers
      * @return mixed
      */
-    public function request(string $method, string $uri, array $data = [], array $headers = [])
+    public function request($method, $uri, $data = [], $headers = [])
     {
         if (!in_array($method, ['get', 'post', 'put', 'patch', 'delete'])) {
             throw new \InvalidArgumentException('Request method must be get, post, put, patch, or delete');

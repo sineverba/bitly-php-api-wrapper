@@ -31,7 +31,7 @@ class Wrapper implements WrapperInterface
      * @param string $long_url
      * @return string
      */
-    public function getShortLink(string $long_url)
+    public function getShortLink($long_url)
     {
         $adapter = $this->getAdapter();
         $data = [
@@ -46,7 +46,7 @@ class Wrapper implements WrapperInterface
     /**
      * @return Adapter
      */
-    private function getAdapter(): Adapter
+    private function getAdapter()
     {
         return $this->adapter;
     }
