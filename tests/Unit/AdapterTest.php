@@ -41,7 +41,7 @@ class AdapterTest extends TestCase
     {
         $this->initialize();
 
-        $fixture = dirname(__DIR__,1).'/Fixtures/httpbin/post.json';
+        $fixture = dirname(__DIR__).'/Fixtures/httpbin/post.json';
         $this->assertFileExists($fixture);
 
         $body = file_get_contents($fixture);
@@ -81,7 +81,7 @@ class AdapterTest extends TestCase
     {
         $this->initialize();
 
-        $fixture = dirname(__DIR__,1).'/Fixtures/httpbin/post.json';
+        $fixture = dirname(__DIR__).'/Fixtures/httpbin/post.json';
         $this->assertFileExists($fixture);
 
         $body = file_get_contents($fixture);
