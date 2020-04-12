@@ -1,4 +1,4 @@
-FROM php:7.0-cli
+FROM php:7.0-fpm
 
 # Arguments defined in docker-compose.yml
 ARG user
@@ -33,9 +33,8 @@ RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
 # Set working directory
-#WORKDIR /var/www
 WORKDIR /home/$user/app
 
 USER $user
 
-ENTRYPOINT /bin/bash
+#ENTRYPOINT /bin/bash
