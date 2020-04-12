@@ -1,4 +1,4 @@
-# Next version
+# 6.0.0
 + Small refactor on Docker usage
 + Compatible to PHP 5.6
 

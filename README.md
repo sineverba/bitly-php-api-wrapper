@@ -3,7 +3,9 @@ The Bit.ly name is trademark of Bit.ly!
 
 Simple PHP wrapper for the [Bit.ly](https://bitly.com/) API V4.
 
-**If you like this project, star it!**
+Support PHP >= 5.6
+
+**If you like or use this project, star it!**
 
 [![Total Downloads](https://poser.pugx.org/sineverba/bitly-php-api-wrapper/downloads)](https://packagist.org/packages/sineverba/bitly-php-api-wrapper)
 
