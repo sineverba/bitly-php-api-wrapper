@@ -1,4 +1,8 @@
-# 6.0.0
+# Next version
++ Remove Travis
++ Remove Docker
+
+## 6.0.0
 + Small refactor on Docker usage
 + Compatible to PHP 5.6
 
