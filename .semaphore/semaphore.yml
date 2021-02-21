@@ -7,17 +7,15 @@ agent:
 
 blocks:
   - name: "Install Dependencies"
-    matrix:
-      - env_var: PHP_VERSION
-        values: ["5.6", "7.0", "7.1", "7.2", "7.4"]
     task:
-      prologue:
-        commands:
-          - phpbrew --no-progress install $PHP_VERSION
-          - sem-version php $PHP_VERSION
       jobs:
         - name: Test
+          matrix:
+            - env_var: PHP_VERSION
+              values: [ "5.6", "7.0", "7.1", "7.2", "7.4" ]
           commands:
+            - phpbrew --no-progress install $PHP_VERSION
+            - sem-version php $PHP_VERSION
             - checkout
             - cache restore
             - composer install
