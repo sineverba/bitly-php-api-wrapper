@@ -10,6 +10,7 @@ Support PHP >= 5.6
 | CI / CD | Status |
 | ------- | ------ |
 | Packagist | [![Total Downloads](https://poser.pugx.org/sineverba/bitly-php-api-wrapper/downloads)](https://packagist.org/packages/sineverba/bitly-php-api-wrapper) |
+| Semaphore CI | [![Build Status](https://sineverba.semaphoreci.com/badges/bitly-php-api-wrapper/branches/master.svg)](https://sineverba.semaphoreci.com/projects/bitly-php-api-wrapper) |
 | Scrutinizer | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/?branch=master) |
 | Scrutinizer |[![Code Coverage](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/?branch=master)|
 | Scrutinizer | [![Build Status](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sineverba/bitly-php-api-wrapper/build-status/master)|

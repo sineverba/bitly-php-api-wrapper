@@ -7,17 +7,19 @@ agent:
 
 blocks:
   - name: "Install Dependencies"
-    matrix:
-      - env_var: PHP_VERSION
-        values: ["5.6", "7.0", "7.1", "7.2", "7.4"]
     task:
-      prologue:
-        commands:
-          - phpbrew --no-progress install $PHP_VERSION
-          - sem-version php $PHP_VERSION
       jobs:
         - name: Test
+          matrix:
+            - env_var: PHP_VERSION
+              values: [ "5.6", "7.0", "7.1", "7.2", "7.3", "7.4" ]
           commands:
+            - phpbrew --no-progress install $PHP_VERSION
+            #- phpbrew install-composer
+            - sem-version php $PHP_VERSION
+            - curl -sS https://getcomposer.org/installer | php
+            - sudo mv composer.phar /usr/local/bin/composer
+            - composer --version
             - checkout
             - cache restore
             - composer install
