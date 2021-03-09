@@ -1,0 +1,28 @@
+version: v1.0
+name: Coverage pipeline
+agent:
+  machine:
+    type: e1-standard-2
+
+  containers:
+    - name: main
+      image: sineverba/php8xc:1.0.0
+
+  image_pull_secrets:
+    - name: DOCKERHUB
+
+global_job_config:
+  secrets:
+    - name: COVERALLS_BITLYPHPAPIWRAPPER_REPO_TOKEN
+
+blocks:
+  - name: "Coverage"
+    task:
+      jobs:
+        - name: Coverage
+          commands:
+            - checkout
+            - rm composer.lock
+            - composer install
+            - ./vendor/bin/phpunit
+            - php vendor/bin/php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v
