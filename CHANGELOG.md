@@ -2,6 +2,7 @@
 + Remove Travis
 + Remove Docker
 + Add Semaphore
++ Refactor CIs
 
 ## 6.0.0
 + Small refactor on Docker usage

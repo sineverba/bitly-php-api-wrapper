@@ -5,46 +5,25 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 
+global_job_config:
+  secrets:
+    - name: COVERALLS_BITLYPHPAPIWRAPPER_REPO_TOKEN
+
 blocks:
-  - name: "Install Dependencies"
+  - name: "Unit Test"
     task:
       jobs:
-        - name: Test
+        - name: Unit test
           matrix:
             - env_var: PHP_VERSION
-              values: [ "5.6", "7.0", "7.1", "7.2", "7.3", "7.4" ]
+              values: [ "5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0" ]
           commands:
             - phpbrew --no-progress install $PHP_VERSION
-            #- phpbrew install-composer
             - sem-version php $PHP_VERSION
             - curl -sS https://getcomposer.org/installer | php
             - sudo mv composer.phar /usr/local/bin/composer
             - composer --version
             - checkout
-            - cache restore
             - composer install
-            - cache store
             - ./vendor/bin/phpunit
-
-#  - name: "Run Unit tests"
-#    task:
-#      jobs:
-#        - name: phpunit
-#          commands:
-#            - checkout
-#            - cache restore
-#            - ./vendor/bin/phpunit
-
-#  - name: "Run Security Tests"
-#    task:
-#      jobs:
-#        - name: sensiolabs
-#          commands:
-#            - checkout
-            # We clone the Security Checker repository, and cd into it.
-#            - git clone https://github.com/sensiolabs/security-checker.git
-#            - cd security-checker
-            # Install Secuirity Checker dependencies (not to be confused by our project dependencies)
-#            - composer install
-            # Finally, run the check
-#            - php security-checker security:check ../composer.lock
+            - php vendor/bin/php-coveralls --coverage_clover=./logs/tests/clover.xml --json_path=./logs/tests/coveralls-upload.json -v
