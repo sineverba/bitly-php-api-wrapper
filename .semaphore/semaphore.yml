@@ -20,7 +20,7 @@ blocks:
           commands:
             - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
             - checkout
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.0.0 vendor/bin/phpunit
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.1.0 vendor/bin/phpunit
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php74xc:1.0.0 vendor/bin/phpunit
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php8xc:1.0.0 vendor/bin/phpunit
 
