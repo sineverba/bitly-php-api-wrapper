@@ -13,9 +13,8 @@ workflows:
   version: 2
   tests:
     jobs:
-      - test-unit
-      #- test-unit:
-      #    filters:
-      #      branches:
-      #        only:
-      #          - develop
+      - test-unit:
+          filters:
+            branches:
+              only:
+                - master

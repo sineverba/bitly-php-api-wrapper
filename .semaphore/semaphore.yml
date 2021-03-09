@@ -5,10 +5,6 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 
-global_job_config:
-  secrets:
-    - name: COVERALLS_BITLYPHPAPIWRAPPER_REPO_TOKEN
-
 blocks:
   - name: "Unit Test"
     task:
@@ -16,7 +12,7 @@ blocks:
         - name: Unit test
           matrix:
             - env_var: PHP_VERSION
-              values: [ "5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0" ]
+              values: [ "5.6", "7.0", "7.1", "7.2", "7.3", "7.4" ]
           commands:
             - phpbrew --no-progress install $PHP_VERSION
             - sem-version php $PHP_VERSION
@@ -26,4 +22,9 @@ blocks:
             - checkout
             - composer install
             - ./vendor/bin/phpunit
-            - php vendor/bin/php-coveralls --coverage_clover=./logs/tests/clover.xml --json_path=./logs/tests/coveralls-upload.json -v
+
+promotions:
+  - name: Coverage
+    pipeline_file: coverage.yml
+    auto_promote:
+      when: "result = 'passed'"
