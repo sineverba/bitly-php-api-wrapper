@@ -5,6 +5,7 @@ jobs:
       - image: sineverba/php8xc:1.0.0
     steps:
       - checkout
+      - run: rm composer.lock
       - run: composer install
       - run: ./vendor/bin/phpunit
 
