@@ -25,4 +25,4 @@ blocks:
             - rm composer.lock
             - composer install
             - ./vendor/bin/phpunit
-            - php vendor/bin/php-coveralls --coverage_clover=logs/tests/clover.xml --json_path=logs/tests/coveralls-upload.json -v
+            - php vendor/bin/php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v
