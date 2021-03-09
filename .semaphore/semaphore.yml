@@ -7,7 +7,7 @@ agent:
 
 global_job_config:
   secrets:
-    - name: DOCKER
+    - name: DOCKERHUB
 
 blocks:
   - name: "Unit Test"
