@@ -6,7 +6,7 @@ agent:
 
   containers:
     - name: main
-      image: sineverba/php8xc:1.0.0
+      image: sineverba/php8xc:1.8.0
 
   image_pull_secrets:
     - name: DOCKERHUB
