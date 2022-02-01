@@ -1,4 +1,4 @@
-# Next version
+# 6.1.0
 + Remove Travis
 + Remove Docker
 + Add Semaphore
