@@ -4,6 +4,7 @@
 + Add Semaphore
 + Refactor CIs
 + Upgrade license date
++ Upgrade CI - CD
 
 ## 6.0.0
 + Small refactor on Docker usage
