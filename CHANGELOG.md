@@ -3,6 +3,7 @@
 + Remove Docker
 + Add Semaphore
 + Refactor CIs
++ Upgrade license date
 
 ## 6.0.0
 + Small refactor on Docker usage
