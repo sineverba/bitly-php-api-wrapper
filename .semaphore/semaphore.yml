@@ -7,26 +7,33 @@ agent:
 
 global_job_config:
   secrets:
-    - name: DOCKERHUB
+    - name: ACCESS_TOKENS
+
+    prologue:
+      commands:
+        - echo $DOCKER_TOKEN | docker login --username "$DOCKER_USERNAME" --password-stdin
+        - checkout
 
 blocks:
-  - name: "Unit Test"
+  - name: "Test"
     task:
       jobs:
-        - name: Unit test
+        - name: Test with PHP 5.6
           commands:
-            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-            - checkout
             - composer install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.3.0 vendor/bin/phpunit
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php74xc:1.5.0 vendor/bin/phpunit
+        - name: Test with PHP 8.1
+          commands:
             - rm -r vendor
             - rm composer.lock
             - composer install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php8xc:1.8.0 vendor/bin/phpunit
-
-promotions:
-  - name: Coverage
-    pipeline_file: coverage.yml
-    auto_promote:
-      when: "result = 'passed'"
+        - name: Coverage
+          commands:
+            - export COVERALLS_REPO_TOKEN=$COVERALLS_BITLY_PHP_API_WRAPPER
+            - rm -r vendor
+            - rm composer.lock
+            - composer install
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php8xc:1.8.0 vendor/bin/phpunit
+            - php vendor/bin/php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v

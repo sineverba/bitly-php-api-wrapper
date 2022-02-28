@@ -1,4 +1,7 @@
-# 6.1.0
+# Next version
++ Refactor Semaphore
+
+## 6.1.0
 + Remove Travis
 + Remove Docker
 + Add Semaphore
