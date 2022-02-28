@@ -14,6 +14,16 @@ global_job_config:
       - echo $DOCKER_TOKEN | docker login --username "$DOCKER_USERNAME" --password-stdin
       - checkout
 
+  env_vars:
+    - name: PHP_5_6_IMAGE
+      value: sineverba/php56xc:1.4.0
+    - name: PHP_7_4_IMAGE
+      value: sineverba/php74xc:1.6.0
+    - name: PHP_8_0_IMAGE
+      value: sineverba/php8xc:1.7.0
+    - name: PHP_8_1_IMAGE
+      value: sineverba/php8xc:1.9.0
+
 blocks:
   - name: "Test"
     task:
@@ -21,13 +31,22 @@ blocks:
         - name: Test with PHP 5.6
           commands:
             - composer install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.3.0 vendor/bin/phpunit
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php74xc:1.5.0 vendor/bin/phpunit
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_5_6_IMAGE vendor/bin/phpunit
+        - name: Test with PHP 7.4
+          commands:
+            - rm composer.lock
+            - composer install
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_7_4_IMAGE vendor/bin/phpunit
+        - name: Test with PHP 8.0
+          commands:
+            - rm composer.lock
+            - composer install
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_0_IMAGE vendor/bin/phpunit
         - name: Test with PHP 8.1
           commands:
             - rm composer.lock
             - composer install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php8xc:1.8.0 vendor/bin/phpunit
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_1_IMAGE vendor/bin/phpunit
         - name: Coverage
           commands:
             - export COVERALLS_REPO_TOKEN=$COVERALLS_BITLY_PHP_API_WRAPPER
