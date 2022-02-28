@@ -9,10 +9,10 @@ global_job_config:
   secrets:
     - name: ACCESS_TOKENS
 
-    prologue:
-      commands:
-        - echo $DOCKER_TOKEN | docker login --username "$DOCKER_USERNAME" --password-stdin
-        - checkout
+  prologue:
+    commands:
+      - echo $DOCKER_TOKEN | docker login --username "$DOCKER_USERNAME" --password-stdin
+      - checkout
 
 blocks:
   - name: "Test"
