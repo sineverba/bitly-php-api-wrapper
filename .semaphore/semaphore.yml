@@ -30,27 +30,27 @@ blocks:
       jobs:
         - name: Test with PHP 5.6
           commands:
-            - composer install
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_5_6_IMAGE install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_5_6_IMAGE vendor/bin/phpunit
         - name: Test with PHP 7.4
           commands:
             - rm composer.lock
-            - composer install
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_7_4_IMAGE install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_7_4_IMAGE vendor/bin/phpunit
         - name: Test with PHP 8.0
           commands:
             - rm composer.lock
-            - composer install
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_0_IMAGE install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_0_IMAGE vendor/bin/phpunit
         - name: Test with PHP 8.1
           commands:
             - rm composer.lock
-            - composer install
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_1_IMAGE install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_1_IMAGE vendor/bin/phpunit
         - name: Coverage
           commands:
             - export COVERALLS_REPO_TOKEN=$COVERALLS_BITLY_PHP_API_WRAPPER
             - rm composer.lock
             - composer install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php8xc:1.8.0 vendor/bin/phpunit
-            - php vendor/bin/php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_1_IMAGE vendor/bin/phpunit
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_1_IMAGE vendor/bin/php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v
