@@ -25,14 +25,12 @@ blocks:
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php74xc:1.5.0 vendor/bin/phpunit
         - name: Test with PHP 8.1
           commands:
-            - rm -r vendor
             - rm composer.lock
             - composer install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php8xc:1.8.0 vendor/bin/phpunit
         - name: Coverage
           commands:
             - export COVERALLS_REPO_TOKEN=$COVERALLS_BITLY_PHP_API_WRAPPER
-            - rm -r vendor
             - rm composer.lock
             - composer install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php8xc:1.8.0 vendor/bin/phpunit
