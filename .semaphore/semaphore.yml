@@ -49,7 +49,6 @@ blocks:
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_1_IMAGE vendor/bin/phpunit
         - name: Coverage
           commands:
-            #- export COVERALLS_REPO_TOKEN=$COVERALLS_BITLY_PHP_API_WRAPPER
             - rm composer.lock
             - composer install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_1_IMAGE vendor/bin/phpunit
