@@ -1,5 +1,6 @@
 # Next version
 + Refactor Semaphore
++ Upgrade dependencies
 
 ## 6.1.0
 + Remove Travis
