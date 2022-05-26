@@ -54,7 +54,7 @@ echo $short_url; // http://bit.ly/2HzJUKT
 
 ## Upgrade
 
-`$ docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.3.0 -d memory_limit=-1 /usr/bin/composer update`
+`$ docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.4.0 -d memory_limit=-1 /usr/bin/composer update`
 
 ## Contributions
 
