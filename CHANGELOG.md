@@ -1,4 +1,7 @@
-# 6.2.2
+# 6.2.3
++ Upgrade dependencies
+
+## 6.2.2
 + Upgrade dependencies
 
 ## 6.2.1
