@@ -18,11 +18,11 @@ global_job_config:
     - name: PHP_5_6_IMAGE
       value: sineverba/php56xc:1.4.0
     - name: PHP_7_4_IMAGE
-      value: sineverba/php74xc:1.6.0
+      value: sineverba/php74xc:1.7.0
     - name: PHP_8_0_IMAGE
       value: sineverba/php8xc:1.7.0
     - name: PHP_8_1_IMAGE
-      value: sineverba/php8xc:1.9.0
+      value: sineverba/php8xc:1.10.0
 
 blocks:
   - name: "Test"
