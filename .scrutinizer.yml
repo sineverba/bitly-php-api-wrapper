@@ -20,5 +20,5 @@ build:
       -
         command: vendor/bin/phpunit --testdox --coverage-clover=logs/clover.xml
         coverage:
-          file: clover
-          format: xml
+          file: clover.xml
+          format: clover
