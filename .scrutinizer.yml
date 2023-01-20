@@ -18,7 +18,7 @@ build:
       - php-scrutinizer-run
       - vendor/bin/php-cs-fixer fix src --dry-run --rules=@PSR2
       -
-        command: vendor/bin/phpunit --testdox --coverage-clover=clover-coverage
+        command: vendor/bin/phpunit --testdox --coverage-clover=logs/clover.xml
         coverage:
-          file: clover-coverage
-          format: clover
+          file: clover
+          format: xml
