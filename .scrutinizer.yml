@@ -2,9 +2,8 @@ filter:
   paths:
     - "src/"
 build:
-  image: default-bionic
   environment:
-    php: '8.0'
+    php: '7.0'
   cache:
     directories:
       - vendor/
@@ -12,13 +11,12 @@ build:
   dependencies:
     before:
       - composer self-update
-      - composer update
   tests:
     override:
       - php-scrutinizer-run
       - vendor/bin/php-cs-fixer fix src --dry-run --rules=@PSR2
       -
-        command: vendor/bin/phpunit --testdox --coverage-clover=logs/clover.xml
+        command: vendor/bin/phpunit --testdox --coverage-clover=clover-coverage
         coverage:
-          file: clover.xml
+          file: clover-coverage
           format: clover
