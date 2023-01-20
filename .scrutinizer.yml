@@ -2,8 +2,8 @@ filter:
   paths:
     - "src/"
 build:
+  image: default-bionic
   environment:
-    image: default-bionic
     php: '8.2.1'
   cache:
     directories:
