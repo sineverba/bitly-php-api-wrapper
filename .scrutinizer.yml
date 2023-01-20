@@ -4,7 +4,7 @@ filter:
 build:
   image: default-bionic
   environment:
-    php: '8.2.1'
+    php: '8.0'
   cache:
     directories:
       - vendor/
