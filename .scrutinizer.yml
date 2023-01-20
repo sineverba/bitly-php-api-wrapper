@@ -3,7 +3,8 @@ filter:
     - "src/"
 build:
   environment:
-    php: '7.0'
+    image: default-bionic
+    php: '8.2.1'
   cache:
     directories:
       - vendor/
