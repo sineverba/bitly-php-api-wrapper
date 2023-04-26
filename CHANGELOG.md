@@ -1,5 +1,6 @@
 # Next version
 + Upgrade dependencies
++ Upgrade dependencies
 
 ## 6.2.3
 + Upgrade dependencies
