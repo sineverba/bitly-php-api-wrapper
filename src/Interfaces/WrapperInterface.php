@@ -12,7 +12,6 @@ use Bitlywrap\Adapter\Adapter;
 
 interface WrapperInterface
 {
-
     /**
      * WrapperInterface constructor.
      * @param Adapter $adapter
