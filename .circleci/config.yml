@@ -9,7 +9,7 @@ jobs:
       - run: sudo docker-php-ext-enable xdebug
       - run: rm composer.lock
       - run: composer install
-      - run: composer test XDEBUG_MODE=coverage
+      - run: XDEBUG_MODE=coverage composer test
       - run: ls -l -a
 
 workflows:
