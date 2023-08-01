@@ -26,8 +26,6 @@ global_job_config:
   prologue:
     commands:
       - echo $DOCKER_TOKEN | docker login --username "$DOCKER_USERNAME" --password-stdin
-      # Fix fatal: detected dubious ownership in repository at '/data'
-      - git config --global --add safe.directory '*'
       - checkout
 
 
@@ -64,6 +62,7 @@ blocks:
             - rm composer.lock
             - composer install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_2_IMAGE vendor/bin/phpunit
+            - chown -R root:root /data
             - >-
               docker run -it 
               -w /data 
