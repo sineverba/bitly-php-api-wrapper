@@ -88,8 +88,13 @@ blocks:
         #      --coverage_clover=logs/clover.xml
         #      --json_path=logs/coveralls-upload.json
         #      -v
-        - name: Sonarcloud
+
+  - name: "Sonarcloud"
+    task:
+      jobs:
+        - name: "Sonarcloud"
           commands:
+            - echo ${PWD}
             - >-
               docker run
               --rm
@@ -97,3 +102,4 @@ blocks:
               -e SONAR_LOGIN=$SONAR_TOKEN
               -v $PWD:/usr/src
               sonarsource/sonar-scanner-cli:$SONARSCANNER_VERSION
+
