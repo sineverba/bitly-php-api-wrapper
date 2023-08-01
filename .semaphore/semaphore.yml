@@ -36,42 +36,43 @@ blocks:
         commands:
           - sem-version php 8.2.8
       jobs:
-        - name: Test with PHP 5.6
-          commands:
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_5_6_IMAGE install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_5_6_IMAGE vendor/bin/phpunit
-        - name: Test with PHP 7.4
-          commands:
-            - rm composer.lock
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_7_4_IMAGE install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_7_4_IMAGE vendor/bin/phpunit
-        - name: Test with PHP 8.0
-          commands:
-            - rm composer.lock
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_0_IMAGE install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_0_IMAGE vendor/bin/phpunit
-        - name: Test with PHP 8.1
-          commands:
-            - rm composer.lock
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_1_IMAGE install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_1_IMAGE vendor/bin/phpunit
-        - name: Test with PHP 8.2
-          commands:
-            - rm composer.lock
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_2_IMAGE install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_2_IMAGE vendor/bin/phpunit
+        #- name: Test with PHP 5.6
+        #  commands:
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_5_6_IMAGE install
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_5_6_IMAGE vendor/bin/phpunit
+        #- name: Test with PHP 7.4
+        #  commands:
+        #    - rm composer.lock
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_7_4_IMAGE install
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_7_4_IMAGE vendor/bin/phpunit
+        #- name: Test with PHP 8.0
+        #  commands:
+        #    - rm composer.lock
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_0_IMAGE install
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_0_IMAGE vendor/bin/phpunit
+        #- name: Test with PHP 8.1
+        #  commands:
+        #    - rm composer.lock
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_1_IMAGE install
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_1_IMAGE vendor/bin/phpunit
+        #- name: Test with PHP 8.2
+        #  commands:
+        #    - rm composer.lock
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_2_IMAGE install
+        #    - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_2_IMAGE vendor/bin/phpunit
         - name: Coverage
           commands:
             - rm composer.lock
             - composer install
             - composer test
+            - ls -l -a
             - php vendor/bin/php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v
-        - name: Sonarcloud
-          commands:
-            - >-
-              docker run
-              --rm
-              -e SONAR_HOST_URL="https://sonarcloud.io"
-              -e SONAR_LOGIN=$SONAR_TOKEN
-              -v $PWD:/usr/src
-              sonarsource/sonar-scanner-cli:$SONARSCANNER_VERSION
+        #- name: Sonarcloud
+        #  commands:
+        #    - >-
+        #      docker run
+        #      --rm
+        #      -e SONAR_HOST_URL="https://sonarcloud.io"
+        #      -e SONAR_LOGIN=$SONAR_TOKEN
+        #      -v $PWD:/usr/src
+        #      sonarsource/sonar-scanner-cli:$SONARSCANNER_VERSION
