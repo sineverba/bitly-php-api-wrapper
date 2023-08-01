@@ -18,7 +18,6 @@ Support PHP >= 5.6
 | StyleCI | [![StyleCI](https://github.styleci.io/repos/164450893/shield?branch=master)](https://github.styleci.io/repos/164450893)| 
 | Coveralls | [![Coverage Status](https://coveralls.io/repos/github/sineverba/bitly-php-api-wrapper/badge.svg?branch=master)](https://coveralls.io/github/sineverba/bitly-php-api-wrapper?branch=master) | 
 | CircleCI | [![CircleCI](https://circleci.com/gh/sineverba/bitly-php-api-wrapper/tree/master.svg?style=svg)](https://circleci.com/gh/sineverba/bitly-php-api-wrapper/tree/master) |
-| SonarCloud | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bitly-php-api-wrapper&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bitly-php-api-wrapper) |
 
 ## Install
 
