@@ -1,0 +1,6 @@
+projectKey=bitly-php-api-wrapper
+serverUrl=https://sonarqube.k2p.it
+serverVersion=10.1.0.73491
+dashboardUrl=https://sonarqube.k2p.it/dashboard?id=bitly-php-api-wrapper
+ceTaskId=AYmxE0I7ohj2dc9jGYi2
+ceTaskUrl=https://sonarqube.k2p.it/api/ce/task?id=AYmxE0I7ohj2dc9jGYi2
