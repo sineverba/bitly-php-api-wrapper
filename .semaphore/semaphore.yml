@@ -63,6 +63,7 @@ blocks:
         - name: Coverage
           commands:
             - rm composer.lock
+            - pecl install xdebug
             - composer install
             - composer test
             - ls -l -a
