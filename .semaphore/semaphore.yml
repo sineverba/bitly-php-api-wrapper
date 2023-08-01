@@ -76,10 +76,16 @@ blocks:
             - ls -l -a
             - sudo chown -R semaphore:semaphore logs/
             - >-
-              php vendor/bin/php-coveralls 
+              docker run 
+              -it 
+              -w /data 
+              -v ${PWD}:/data 
+              --entrypoint php 
+              --rm 
+              --env COVERALLS_REPO_TOKEN=$COVERALLS_BITLY_PHP_API_WRAPPER $PHP_8_2_IMAGE 
+              vendor/bin/php-coveralls 
               --coverage_clover=logs/clover.xml 
               --json_path=logs/coveralls-upload.json 
-              -r /home/semaphore/bitly-php-api-wrapper
               -v
         #- name: Sonarcloud
         #  commands:
