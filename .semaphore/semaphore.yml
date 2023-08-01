@@ -63,10 +63,10 @@ blocks:
         - name: Coverage
           commands:
             - rm composer.lock
-            - pecl install xdebug
             - composer install
             - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php8xc:1.15.0 -d memory_limit=-1 /usr/bin/composer test
             - ls -l -a
+            - chown -R semaphore:semaphore logs/
             - php vendor/bin/php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v
         #- name: Sonarcloud
         #  commands:
