@@ -1,20 +1,18 @@
 version: 2.1
 jobs:
-  test-unit:
+  test:
     docker:
-      - image: sineverba/php8xc:1.15.0
+      - image: cimg/php:8.2.8
     steps:
+      - sudo -E install-php-extensions xsl xdebug
+      - sudo docker-php-ext-enable xdebug
       - checkout
       - run: rm composer.lock
       - run: composer install
-      - run: ./vendor/bin/phpunit
+      - run: composer test
 
 workflows:
   version: 2
   tests:
     jobs:
-      - test-unit:
-          filters:
-            branches:
-              only:
-                - master
+      - test
