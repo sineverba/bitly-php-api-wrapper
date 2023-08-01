@@ -64,6 +64,7 @@ blocks:
           commands:
             - rm composer.lock
             - composer install
+            - echo ${PWD}
             - >-
               docker run 
               -it -w /data 
