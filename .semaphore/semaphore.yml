@@ -78,7 +78,7 @@ blocks:
               php vendor/bin/php-coveralls 
               --coverage_clover=logs/clover.xml 
               --json_path=logs/coveralls-upload.json 
-              --root-dir="."
+              --root_dir="."
               -v
         #- name: Sonarcloud
         #  commands:
