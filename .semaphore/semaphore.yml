@@ -26,6 +26,8 @@ global_job_config:
   prologue:
     commands:
       - echo $DOCKER_TOKEN | docker login --username "$DOCKER_USERNAME" --password-stdin
+      # Fix fatal: detected dubious ownership in repository at '/data'
+      - git config --global --add safe.directory '*'
       - checkout
 
 
