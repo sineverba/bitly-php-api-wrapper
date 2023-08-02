@@ -10,7 +10,7 @@ jobs:
       - run: rm composer.lock
       - run: composer install
       - run: XDEBUG_MODE=coverage composer test
-      - run: sudo apt-get update -y && apt-get install wget unzip -y
+      - run: sudo apt-get update -y && sudo apt-get install wget unzip -y
       - run: wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
       - run: unzip sonar-scanner-cli-4.8.0.2856-linux.zip
       - run: |
