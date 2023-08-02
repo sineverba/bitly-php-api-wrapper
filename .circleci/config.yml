@@ -14,7 +14,7 @@ jobs:
       - run: wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
       - run: unzip sonar-scanner-cli-4.8.0.2856-linux.zip
       - run: |
-          sonar-scanner-$SONARSCANNER_VERSION-linux/bin/sonar-scanner
+          sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.login=${SONAR_TOKEN}
           
