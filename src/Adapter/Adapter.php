@@ -57,8 +57,7 @@ class Adapter implements AdapterInterface
      */
     public function post($uri, $data = [], $headers = [])
     {
-        $response = $this->request('post', $uri, $data, $headers);
-        return $response;
+        return $this->request('post', $uri, $data, $headers);
     }
 
     /**
@@ -73,11 +72,10 @@ class Adapter implements AdapterInterface
         if (!in_array($method, ['get', 'post', 'put', 'patch', 'delete'])) {
             throw new \InvalidArgumentException('Request method must be get, post, put, patch, or delete');
         }
-        $response = $this->getClient()->$method($uri, [
+        return $this->getClient()->$method($uri, [
             'headers' => $headers,
             ($method === 'get' ? 'query' : 'json') => $data,
         ]);
-        return $response;
     }
 
     /**

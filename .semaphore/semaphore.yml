@@ -9,26 +9,32 @@ global_job_config:
   secrets:
     - name: ACCESS_TOKENS
 
-  prologue:
-    commands:
-      - echo $DOCKER_TOKEN | docker login --username "$DOCKER_USERNAME" --password-stdin
-      - checkout
-
   env_vars:
     - name: PHP_5_6_IMAGE
-      value: sineverba/php56xc:1.5.0
+      value: sineverba/php56xc:1.6.0
     - name: PHP_7_4_IMAGE
-      value: sineverba/php74xc:1.8.0
+      value: sineverba/php74xc:1.9.0
     - name: PHP_8_0_IMAGE
       value: sineverba/php8xc:1.7.0
     - name: PHP_8_1_IMAGE
       value: sineverba/php8xc:1.11.0
     - name: PHP_8_2_IMAGE
-      value: sineverba/php8xc:1.12.0
+      value: sineverba/php8xc:1.15.0
+    - name: SONARSCANNER_VERSION
+      value: 4.8.0
+
+  prologue:
+    commands:
+      - echo $DOCKER_TOKEN | docker login --username "$DOCKER_USERNAME" --password-stdin
+      - checkout
+
 
 blocks:
   - name: "Test"
     task:
+      prologue:
+        commands:
+          - sem-version php 8.2.8
       jobs:
         - name: Test with PHP 5.6
           commands:
@@ -53,10 +59,4 @@ blocks:
           commands:
             - rm composer.lock
             - docker run -it -w /data -v ${PWD}:/data --entrypoint "/usr/bin/composer" --rm $PHP_8_2_IMAGE install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_2_IMAGE vendor/bin/phpunit
-        - name: Coverage
-          commands:
-            - rm composer.lock
-            - composer install
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_2_IMAGE vendor/bin/phpunit
-            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm --env COVERALLS_REPO_TOKEN=$COVERALLS_BITLY_PHP_API_WRAPPER $PHP_8_2_IMAGE vendor/bin/php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v
+            - docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm $PHP_8_2_IMAGE /usr/bin/composer test

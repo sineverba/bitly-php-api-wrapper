@@ -1,20 +1,26 @@
 version: 2.1
 jobs:
-  test-unit:
+  test:
     docker:
-      - image: sineverba/php8xc:1.12.0
+      - image: cimg/php:8.2.8
     steps:
       - checkout
+      - run: sudo -E install-php-extensions xdebug
+      - run: sudo docker-php-ext-enable xdebug
       - run: rm composer.lock
       - run: composer install
-      - run: ./vendor/bin/phpunit
+      - run: XDEBUG_MODE=coverage composer test
+      - run: php vendor/bin/php-coveralls --coverage_clover=logs/clover.xml --json_path=logs/coveralls-upload.json -v
+      - run: sudo apt-get update -y && sudo apt-get install wget unzip -y
+      - run: wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
+      - run: unzip sonar-scanner-cli-4.8.0.2856-linux.zip
+      - run: sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=${SONAR_TOKEN}
+          
 
 workflows:
   version: 2
   tests:
     jobs:
-      - test-unit:
-          filters:
-            branches:
-              only:
-                - master
+      - test:
+          context:
+            - SECRETS
