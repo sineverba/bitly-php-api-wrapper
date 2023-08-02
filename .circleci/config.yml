@@ -10,10 +10,11 @@ jobs:
       - run: rm composer.lock
       - run: composer install
       - run: XDEBUG_MODE=coverage composer test
+      - run: php vendor/bin/php-coveralls --coverage_clover=logs/clover.xml --json_path=logs/coveralls-upload.json -v
       - run: sudo apt-get update -y && sudo apt-get install wget unzip -y
       - run: wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
       - run: unzip sonar-scanner-cli-4.8.0.2856-linux.zip
-      - run: sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}
+      - run: sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=${SONAR_TOKEN}
           
 
 workflows:
