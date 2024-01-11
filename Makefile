@@ -1,4 +1,4 @@
-SONARSCANNER_VERSION=4.8.0
+SONARSCANNER_VERSION=5.0.1
 
 sonar:
 	docker run --rm -it \
@@ -8,8 +8,11 @@ sonar:
 		-e SONAR_TOKEN=$(SONAR_TOKEN) \
 		sonarsource/sonar-scanner-cli:$(SONARSCANNER_VERSION)
 
+install:
+	docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.7.0 -d memory_limit=-1 /usr/bin/composer install
+
 upgrade:
-	docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.6.0 -d memory_limit=-1 /usr/bin/composer update
+	docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.7.0 -d memory_limit=-1 /usr/bin/composer update
 
 test:
-	docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.6.0 -d memory_limit=-1 /usr/bin/composer test
+	docker run -it -w /data -v ${PWD}:/data --entrypoint php --rm sineverba/php56xc:1.7.0 -d memory_limit=-1 /usr/bin/composer test
